@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import './src/screens/SingleProvider.dart';
+import 'package:provider/provider.dart';
+import './src/screens/Home.dart';
+import './src/providers/product.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,8 +19,14 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: SafeArea(child: SingleProvider()),
+      home: MultiProvider(
+        providers: [
+          ChangeNotifierProvider<ProductProvider>(
+              create: (context) => ProductProvider())
+        ],
+        child: Scaffold(
+          body: SafeArea(child: HomePage()),
+        ),
       ),
     );
   }
