@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import './src/screens/Home.dart';
-import './src/screens/Counter.dart';
+import './src/screens/GetStarted.dart';
 
 void main() {
   runApp(const MyWidget());
@@ -13,7 +13,7 @@ class MyWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: GetStartedPage(),
     );
   }
 }
